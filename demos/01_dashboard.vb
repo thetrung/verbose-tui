@@ -10,8 +10,10 @@ Declare Function strcmp(a, b As String) As Integer
 
 Public Function main(argc As Integer, argv() As Pointer) As Integer
   Dim snapshotMode As Boolean = False
-  If argc >= 2 And strcmp(argv(1), "--snapshot") = 0 Then
-    snapshotMode = True
+  If argc >= 2 Then
+    If strcmp(argv(1), "--snapshot") = 0 Then
+      snapshotMode = True
+    End If
   End If
 
   Dim arena As Arena = ArenaCreate(2097152)
