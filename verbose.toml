@@ -1,12 +1,12 @@
 [package]
 name = "verbose-tui"
-version = "0.1.0"
-description = "Ratatui-inspired zero-GC double-buffered TUI library for VerBose-Lang"
+version = "0.2.0"
+description = "Ratatui-inspired 100% pure VerBose-Lang zero-GC double-buffered TUI library (zero C files, zero ncurses)"
 license = "MIT"
 repository = "https://github.com/thetrung/verbose-tui"
 
 [lib]
 include_dir = "src"
 entry = "tui.vb"
-c_sources = ["csrc/tui_term.c"]
+c_sources = []
 c_libs = []

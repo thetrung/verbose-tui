@@ -58,16 +58,8 @@ Public Structure TuiEvent
   Dim key, ch As Integer
 End Structure
 
-' --- C Backend FFI (csrc/tui_term.c) ---
-Declare Function TuiTermInit() As Integer
-Declare Sub TuiTermShutdown()
-Declare Sub TuiTermGetSize(ByRef outW, outH As Integer)
-Declare Function TuiTermWasResized() As Integer
-Declare Sub TuiTermWriteBytes(data As Pointer, length As Integer)
-Declare Function TuiUtf8Encode(cp As Integer, dst As Pointer) As Integer
-Declare Function TuiDecodeKeyBytes(buf As Pointer, length As Integer, ByRef outCh As Integer) As Integer
-Declare Function TuiTermPollKey(timeoutMs As Integer, ByRef outCh As Integer) As Integer
-Declare Function TuiFmtInt(v As Integer, dst As Pointer) As Integer
+' --- Pure VerBose POSIX Terminal Backend (src/tui_term.vb) ---
+Include "tui_term.vb"
 
 ' --- Color & Style Constructors ---
 Public Function TuiColorDefault() As TuiColor
